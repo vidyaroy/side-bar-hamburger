@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#header {
+  width: 100%;
+  height: 100vh;
+  background-image: url("img/header-img.jpg");
+  background-repeat: no-repeat;
+  background-position: cover;
+}
+
+.navbar {
+  background-color: #01a3a4;
+  width: 100%;
+  height: 60px;
+  border: 2px solid #10ac84;
+  color: #42200B;
+  position: fixed;
+}
+
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  display: flex;
+}
+
+.brand {
+  align-self: center;
+  padding-left: 10px;
+}
+
+/*-**-**-**-**-**-**-**-**-* Header Right *-**-**-**-**-**-**-**-**-*/
+.header-right {
+  text-align: right;
+  align-self: center;
+}
+
+.express-delivery {
+  text-decoration: none;
+  color: #42200B;
+}
+
+.menu-items {
+  display: flex;
+  list-style-type: none;
+}
+
+.menu-items li {
+  margin-left: 30px;
+  padding-top: 8px;
+}
+
+.menu-items li a {
+  text-decoration: none;
+  color: #42200B;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+/*-**-**-**-**-**-**-**-**-* Section(Paragraph) *-**-**-**-**-**-**-**-**-*/
+.paragraph {
+  background-color: #01a3a4;
+  margin-bottom: 40px;
+}
+
+
+
+
+/*-**-**-**-**-**-**-**-**-**-**-**-**-* Media Queries *-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**-*/
+@media screen and (max-width:769px) {
+  .header-right {
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 60px;
+    width: 250px;
+    background-color: #01a3a4;
+    transform: translateX(250px);
+    transition: transform 250ms ease-in-out;
+  }
+
+  #hamburger:checked ~ .header-right {
+    transform: translateX(0px);
+  }
+
+  .sidebarIconToggle {
+    height: 22px;
+    width: 22px;
+    position: absolute;
+    z-index: 10;
+    top: 22px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  .spinner {
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s;
+    margin-bottom: 5px;
+  }
+
+  #hamburger:checked ~ .sidebarIconToggle > .spinner.middle {
+    opacity: 0;
+  }
+
+  #hamburger:checked ~ .sidebarIconToggle > .spinner.top {
+    transform: rotate(135deg);
+    margin-top: 12.2px;
+  }
+
+  #hamburger:checked ~ .sidebarIconToggle > .spinner.bottom {
+    transform: rotate(-135deg);
+    margin-top: -13.2px;
+  }
+
+  span {
+    display: none;
+  }
+  .menu-items {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+
+  .menu-items li{
+    padding-top: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  }
+}
